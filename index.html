@@ -80,6 +80,8 @@
             font-weight: 900;
         }
 
+        nav { display: flex; align-items: center; gap: 30px; }
+        
         nav ul { display: flex; gap: 20px; list-style: none; }
 
         nav a:hover {
@@ -87,24 +89,38 @@
             text-shadow: 0 0 8px var(--neon-pink);
         }
 
-        /* --- HERO SECTION (ATUALIZADO COM FOTO) --- */
+        /* Language Button Styles */
+        #lang-btn {
+            background: transparent;
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 5px 15px;
+            font-family: 'Share Tech Mono', monospace;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        #lang-btn:hover {
+            background: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 10px var(--neon-green);
+        }
+
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centraliza o conjunto */
-            gap: 5%; /* Espaço entre texto e foto */
+            justify-content: center;
+            gap: 5%;
             padding: 100px 10%;
             position: relative;
         }
 
-        .hero-content {
-            flex: 1;
-        }
+        .hero-content { flex: 1; }
 
-        /* Container da Foto Cyberpunk */
         .hero-img-container {
-            flex: 0 0 350px; /* Largura fixa para a foto */
+            flex: 0 0 350px;
             height: 350px;
             position: relative;
             border: 2px solid var(--neon-cyan);
@@ -115,123 +131,58 @@
             overflow: hidden;
         }
         
-        /* Simulação de cantos tecnológicos */
         .hero-img-container::before {
-            content: '';
-            position: absolute;
-            top: -2px; left: -2px; width: 20px; height: 20px;
-            border-top: 4px solid var(--neon-pink);
-            border-left: 4px solid var(--neon-pink);
-            z-index: 2;
+            content: ''; position: absolute; top: -2px; left: -2px; width: 20px; height: 20px;
+            border-top: 4px solid var(--neon-pink); border-left: 4px solid var(--neon-pink); z-index: 2;
         }
         .hero-img-container::after {
-            content: '';
-            position: absolute;
-            bottom: -2px; right: -2px; width: 20px; height: 20px;
-            border-bottom: 4px solid var(--neon-pink);
-            border-right: 4px solid var(--neon-pink);
-            z-index: 2;
+            content: ''; position: absolute; bottom: -2px; right: -2px; width: 20px; height: 20px;
+            border-bottom: 4px solid var(--neon-pink); border-right: 4px solid var(--neon-pink); z-index: 2;
         }
 
-        /* Placeholder para a imagem (substitua o src pelo seu arquivo real) */
         .hero-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%) contrast(1.2); /* Estilo Cyberpunk P&B */
-            transition: 0.5s;
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(100%) contrast(1.2); transition: 0.5s;
         }
         
-        .hero-img-container:hover .hero-img {
-            filter: grayscale(0%) contrast(1);
-        }
+        .hero-img-container:hover .hero-img { filter: grayscale(0%) contrast(1); }
 
-        /* Efeito de glitch no texto */
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            position: relative;
-        }
-
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; position: relative; }
         .hero h1::before, .hero h1::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-color);
+            content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color);
         }
-
         .hero h1::before {
-            left: 2px;
-            text-shadow: -1px 0 var(--neon-pink);
-            clip: rect(24px, 550px, 90px, 0);
+            left: 2px; text-shadow: -1px 0 var(--neon-pink); clip: rect(24px, 550px, 90px, 0);
             animation: glitch-anim 3s infinite linear alternate-reverse;
         }
-
         .hero h1::after {
-            left: -2px;
-            text-shadow: -1px 0 var(--neon-cyan);
-            clip: rect(85px, 550px, 140px, 0);
+            left: -2px; text-shadow: -1px 0 var(--neon-cyan); clip: rect(85px, 550px, 140px, 0);
             animation: glitch-anim 2s infinite linear alternate-reverse;
         }
 
         .btn-cyber {
-            display: inline-block;
-            padding: 15px 30px;
-            border: 1px solid var(--neon-cyan);
-            color: var(--neon-cyan);
-            font-weight: bold;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            margin-top: 20px;
-            cursor: pointer;
+            display: inline-block; padding: 15px 30px; border: 1px solid var(--neon-cyan);
+            color: var(--neon-cyan); font-weight: bold; text-transform: uppercase;
+            position: relative; overflow: hidden; margin-top: 20px; cursor: pointer;
         }
-
-        .btn-cyber:hover {
-            background: var(--neon-cyan);
-            color: #000;
-            box-shadow: 0 0 20px var(--neon-cyan);
-        }
+        .btn-cyber:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
 
         /* --- SECTIONS GENERAL --- */
-        section {
-            padding: 80px 10%;
-            border-bottom: 1px solid #222;
-        }
-
+        section { padding: 80px 10%; border-bottom: 1px solid #222; }
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            border-left: 5px solid var(--neon-pink);
-            padding-left: 15px;
-            color: #fff;
+            font-size: 2.5rem; margin-bottom: 40px; border-left: 5px solid var(--neon-pink);
+            padding-left: 15px; color: #fff;
         }
 
         /* --- ABOUT & STATS --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Dividido igualmente agora */
-            gap: 40px;
-        }
-
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         .terminal-box {
-            background: var(--terminal-bg);
-            border: 1px solid #333;
-            padding: 20px;
-            font-size: 1.1rem;
-            box-shadow: 5px 5px 0px var(--neon-cyan);
-            height: fit-content;
+            background: var(--terminal-bg); border: 1px solid #333; padding: 20px;
+            font-size: 1.1rem; box-shadow: 5px 5px 0px var(--neon-cyan); height: fit-content;
         }
 
-        .skills-category {
-            margin-bottom: 25px;
-        }
-        .skills-category h4 {
-            color: var(--text-main);
-            border-bottom: 1px solid #333;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-        }
+        .skills-category { margin-bottom: 25px; }
+        .skills-category h4 { color: var(--text-main); border-bottom: 1px solid #333; margin-bottom: 10px; padding-bottom: 5px; }
 
         .stat-bar { margin-bottom: 15px; }
         .stat-label { display: flex; justify-content: space-between; margin-bottom: 5px; color: var(--neon-green); font-size: 0.9rem; }
@@ -241,93 +192,42 @@
         .fill.tertiary { background: var(--neon-yellow); box-shadow: 0 0 8px var(--neon-yellow); }
 
         /* --- EXPERIENCE CARDS --- */
-        .xp-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Uma coluna para dar espaço ao texto detalhado */
-            gap: 30px;
-        }
-
+        .xp-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
         .xp-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--neon-cyan); /* Borda alterada para ciano */
-            padding: 30px;
-            transition: 0.3s;
-            position: relative;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--neon-cyan);
+            padding: 30px; transition: 0.3s; position: relative;
         }
-
-        .xp-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-        }
-
+        .xp-card:hover { transform: translateY(-5px); box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
         .xp-card h3 { color: var(--neon-cyan); margin-bottom: 5px; font-size: 1.4rem; }
         .xp-card .date { font-size: 0.9rem; color: var(--neon-pink); margin-bottom: 15px; display: block; font-weight: bold; }
         
-        .xp-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-        .xp-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-            color: #ccc;
-        }
-        .xp-list li::before {
-            content: '>';
-            position: absolute;
-            left: 0;
-            color: var(--neon-green);
-        }
+        .xp-list { list-style: none; margin-top: 15px; }
+        .xp-list li { margin-bottom: 8px; padding-left: 20px; position: relative; color: #ccc; }
+        .xp-list li::before { content: '>'; position: absolute; left: 0; color: var(--neon-green); }
 
         /* --- LINKS & FOOTER --- */
-        .links-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
+        .links-container { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
         .social-link {
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border: 1px solid var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.2rem; padding: 10px 20px; border: 1px solid var(--text-main);
+            display: flex; align-items: center; gap: 10px;
         }
+        .social-link:hover { border-color: var(--neon-green); color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
 
-        .social-link:hover {
-            border-color: var(--neon-green);
-            color: var(--neon-green);
-            box-shadow: 0 0 10px var(--neon-green);
-        }
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; color: #666; border-top: 1px solid var(--neon-cyan); }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid var(--neon-cyan);
-        }
-
-        /* --- ANIMATIONS --- */
         @keyframes glitch-anim {
             0% { clip: rect(44px, 9999px, 56px, 0); }
             5% { clip: rect(12px, 9999px, 88px, 0); }
-            10% { clip: rect(85px, 9999px, 10px, 0); }
-            15% { clip: rect(30px, 9999px, 60px, 0); }
-            20% { clip: rect(10px, 9999px, 100px, 0); }
             100% { clip: rect(0, 0, 0, 0); }
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; padding-top: 120px; text-align: center; }
             .hero h1 { font-size: 2.5rem; }
             .hero-content { width: 100%; }
             .about-grid { grid-template-columns: 1fr; }
-            nav { display: none; }
+            nav ul { display: none; } /* Oculta menu, mantem botão */
+            nav { justify-content: flex-end; }
             .hero-img-container { margin-bottom: 30px; width: 250px; height: 250px; }
         }
     </style>
@@ -338,26 +238,27 @@
         <div class="logo">GABRIEL_FELICISSIMO://</div>
         <nav>
             <ul>
-                <li><a href="#home">/HOME</a></li>
-                <li><a href="#about">/PERFIL</a></li>
-                <li><a href="#xp">/MISSÕES</a></li>
-                <li><a href="#contact">/CONTATO</a></li>
+                <li><a href="#home" data-translate="nav_home">/HOME</a></li>
+                <li><a href="#about" data-translate="nav_about">/PERFIL</a></li>
+                <li><a href="#xp" data-translate="nav_xp">/MISSÕES</a></li>
+                <li><a href="#contact" data-translate="nav_contact">/CONTATO</a></li>
             </ul>
+            <button id="lang-btn" onclick="toggleLanguage()">[ PT / EN ]</button>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
             <h2 class="typewriter" style="color: var(--neon-green)">> System.Init(User);</h2>
-            <h2>> Olá, Mundo. Eu sou</h2>
-            <h1 data-text="> GABRIEL FELICISSIMO">> GABRIEL FELICISSIMO</h1>
-            <h2 style="color: #fff; margin-top: 10px; font-size: 1.2rem;">
+            <h2 data-translate="hero_hello">> Olá, Mundo. Eu sou</h2>
+            <h1 data-text="GABRIEL FELICISSIMO">GABRIEL FELICISSIMO</h1>
+            <h2 style="color: #fff; margin-top: 10px; font-size: 1.2rem;" data-translate="hero_roles">
                 [ BACKEND DEV | QA LEAD | SUPORTE N3 ]
             </h2>
-            <p style="margin-top: 20px; max-width: 600px; color: #ccc;">
+            <p style="margin-top: 20px; max-width: 600px; color: #ccc;" data-translate="hero_desc">
                 Especialista em unir desenvolvimento robusto (PHP/Laravel) com a excelência em qualidade (QA) e análise crítica de suporte.
             </p>
-            <a href="#contact" class="btn-cyber">INICIAR_CONEXÃO</a>
+            <a href="#contact" class="btn-cyber" data-translate="btn_connect">INICIAR_CONEXÃO</a>
         </div>
         
         <div class="hero-img-container">
@@ -366,35 +267,35 @@
     </section>
 
     <section id="about">
-        <h2 class="section-title">01. ARQUIVO_PESSOAL & STACK</h2>
+        <h2 class="section-title" data-translate="about_title">01. ARQUIVO_PESSOAL & STACK</h2>
         <div class="about-grid">
             <div class="terminal-box">
-                <p>> Carregando bio...</p>
-                <p>> Status: <span style="color:var(--neon-green)">Disponível</span></p>
+                <p data-translate="loading_bio">> Carregando bio...</p>
+                <p>> Status: <span style="color:var(--neon-green)" data-translate="status">Disponível</span></p>
                 <br>
-                <p>
+                <p data-translate="bio_p1">
                     Profissional de TI com <strong>8+ anos de experiência</strong>, atuando na intersecção entre Desenvolvimento, Sustentação e Qualidade.
                 </p>
                 <br>
-                <p>
+                <p data-translate="bio_p2">
                     Minha expertise vai além do código: possuo forte background em análise de incidentes críticos (N3), gestão de SLA e processos de QA. Isso me permite não apenas criar software, mas garantir que ele seja mantido, testado e suportado com excelência.
                 </p>
                 <br>
-                <p style="color: var(--neon-cyan)">> Foco: Laravel, Docker, C#, QA Automation.</p>
+                <p style="color: var(--neon-cyan)" data-translate="focus">> Foco: Laravel, Docker, C#, QA Automation.</p>
                 <p style="color: var(--neon-cyan)">> Local: Praia Grande, SP</p>
             </div>
             
             <div class="skills-box">
-                <h3 style="color: var(--neon-pink); margin-bottom: 20px;">// COMPETÊNCIAS TÉCNICAS</h3>
+                <h3 style="color: var(--neon-pink); margin-bottom: 20px;" data-translate="tech_skills">// COMPETÊNCIAS TÉCNICAS</h3>
                 
                 <div class="skills-category">
-                    <h4>BACKEND & LINGUAGENS</h4>
+                    <h4 data-translate="cat_backend">BACKEND & LINGUAGENS</h4>
                     <div class="stat-bar">
                         <div class="stat-label"><span>PHP / Laravel Framework</span><span>95%</span></div>
                         <div class="progress"><div class="fill" style="width: 95%;"></div></div>
                     </div>
                     <div class="stat-bar">
-                        <div class="stat-label"><span>C# (Backend / Aplicações)</span><span>70%</span></div>
+                        <div class="stat-label"><span data-translate="skill_csharp">C# (Backend / Aplicações)</span><span>70%</span></div>
                         <div class="progress"><div class="fill secondary" style="width: 70%;"></div></div>
                     </div>
                     <div class="stat-bar">
@@ -408,17 +309,17 @@
                 </div>
 
                 <div class="skills-category">
-                    <h4>QA, SUPORTE & FERRAMENTAS</h4>
+                    <h4 data-translate="cat_qa">QA, SUPORTE & FERRAMENTAS</h4>
                     <div class="stat-bar">
                         <div class="stat-label"><span>Docker & DevOps</span><span>85%</span></div>
                         <div class="progress"><div class="fill tertiary" style="width: 85%;"></div></div>
                     </div>
                     <div class="stat-bar">
-                        <div class="stat-label"><span>Testes (PHPUnit / Postman)</span><span>80%</span></div>
+                        <div class="stat-label"><span data-translate="skill_tests">Testes (PHPUnit / Postman)</span><span>80%</span></div>
                         <div class="progress"><div class="fill tertiary" style="width: 80%;"></div></div>
                     </div>
                     <div class="stat-bar">
-                        <div class="stat-label"><span>Gestão de Incidentes (Jira / Zendesk)</span><span>95%</span></div>
+                        <div class="stat-label"><span data-translate="skill_incidents">Gestão de Incidentes (Jira / Zendesk)</span><span>95%</span></div>
                         <div class="progress"><div class="fill tertiary" style="width: 95%;"></div></div>
                     </div>
                 </div>
@@ -427,55 +328,55 @@
     </section>
 
     <section id="xp">
-        <h2 class="section-title">02. LOGS_DE_MISSÃO (EXPERIÊNCIA)</h2>
+        <h2 class="section-title" data-translate="xp_title">02. LOGS_DE_MISSÃO (EXPERIÊNCIA)</h2>
         <div class="xp-grid">
             <div class="xp-card">
                 <h3>OM30</h3>
-                <span class="date">2023-2025</span>
-                <p>> Líder de Suporte e QA & Analista de Sistemas</p>
+                <span class="date" data-translate="date_current">2023-2025</span>
+                <p data-translate="role_om30">> Líder de Suporte e QA & Analista de Sistemas</p>
                 <ul class="xp-list">
-                    <li>Liderança técnica da equipe de suporte, realizando triagem avançada e distribuição de incidentes (N1, N2 e N3).</li>
-                    <li>Atuação direta na <strong>Garantia de Qualidade (QA)</strong>, validando correções e prevenindo regressão de bugs antes do deploy.</li>
-                    <li>Gestão de SLAs críticos e comunicação técnica com clientes da área pública (Saúde/Educação).</li>
-                    <li>Ponte técnica entre a equipe de Suporte e Desenvolvimento, traduzindo falhas operacionais em requisitos técnicos.</li>
-                    <li>Uso de ferramentas como Jira e Zendesk para rastreabilidade de chamados.</li>
+                    <li data-translate="om30_1">Liderança técnica da equipe de suporte, realizando triagem avançada e distribuição de incidentes (N1, N2 e N3).</li>
+                    <li data-translate="om30_2">Atuação direta na <strong>Garantia de Qualidade (QA)</strong>, validando correções e prevenindo regressão de bugs antes do deploy.</li>
+                    <li data-translate="om30_3">Gestão de SLAs críticos e comunicação técnica com clientes da área pública (Saúde/Educação).</li>
+                    <li data-translate="om30_4">Ponte técnica entre a equipe de Suporte e Desenvolvimento, traduzindo falhas operacionais em requisitos técnicos.</li>
+                    <li data-translate="om30_5">Uso de ferramentas como Jira e Zendesk para rastreabilidade de chamados.</li>
                 </ul>
             </div>
 
             <div class="xp-card">
                 <h3>TOXICOLOGIA PARDINI</h3>
                 <span class="date">2019 - 2025</span>
-                <p>> Desenvolvedor PHP & Analista de Sustentação</p>
+                <p data-translate="role_pardini">> Desenvolvedor PHP & Analista de Sustentação</p>
                 <ul class="xp-list">
-                    <li>Desenvolvimento backend robusto utilizando <strong>Laravel, Docker e MySQL</strong>.</li>
-                    <li>Sustentação de sistemas laboratoriais de missão crítica com foco em Alta Disponibilidade.</li>
-                    <li>Criação e manutenção de APIs RESTful e integração de microsserviços.</li>
-                    <li>Implementação de testes automatizados e boas práticas de segurança (JWT, CSRF).</li>
-                    <li>Diagnóstico de bugs complexos e refatoração de código legado para melhoria de performance.</li>
+                    <li data-translate="pardini_1">Desenvolvimento backend robusto utilizando <strong>Laravel, Docker e MySQL</strong>.</li>
+                    <li data-translate="pardini_2">Sustentação de sistemas laboratoriais de missão crítica com foco em Alta Disponibilidade.</li>
+                    <li data-translate="pardini_3">Criação e manutenção de APIs RESTful e integração de microsserviços.</li>
+                    <li data-translate="pardini_4">Implementação de testes automatizados e boas práticas de segurança (JWT, CSRF).</li>
+                    <li data-translate="pardini_5">Diagnóstico de bugs complexos e refatoração de código legado para melhoria de performance.</li>
                 </ul>
             </div>
 
             <div class="xp-card">
                 <h3>PETRONET IT</h3>
                 <span class="date">2017 - 2019</span>
-                <p>> Suporte Técnico & Web Dev</p>
+                <p data-translate="role_petronet">> Suporte Técnico & Web Dev</p>
                 <ul class="xp-list">
-                    <li>Suporte à infraestrutura Windows e Linux, garantindo a operação dos serviços de rede.</li>
-                    <li>Desenvolvimento e customização de sites em WordPress e PHP.</li>
-                    <li>Diagnóstico de problemas em integrações de API e análise de logs de servidor.</li>
-                    <li>Documentação técnica de procedimentos para base de conhecimento.</li>
+                    <li data-translate="petronet_1">Suporte à infraestrutura Windows e Linux, garantindo a operação dos serviços de rede.</li>
+                    <li data-translate="petronet_2">Desenvolvimento e customização de sites em WordPress e PHP.</li>
+                    <li data-translate="petronet_3">Diagnóstico de problemas em integrações de API e análise de logs de servidor.</li>
+                    <li data-translate="petronet_4">Documentação técnica de procedimentos para base de conhecimento.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">03. ESTABELECER_CONEXÃO</h2>
+        <h2 class="section-title" data-translate="contact_title">03. ESTABELECER_CONEXÃO</h2>
         <div style="text-align: center;">
             <p class="terminal-box" style="display: inline-block;">
-                > Protocolo de contato iniciado...<br>
+                <span data-translate="contact_p1">> Protocolo de contato iniciado...</span><br>
                 > Email: gabriel.felicissimo96@gmail.com<br>
-                > Status: Aberto a propostas de Dev e Liderança
+                > Status: <span data-translate="contact_status">Aberto a propostas de Dev e Liderança</span>
             </p>
             
             <div class="links-container">
@@ -496,5 +397,116 @@
         <p>SYSTEM.EXIT(0) // DEVELOPED BY GABRIEL FELICISSIMO © 2025</p>
     </footer>
 
+    <script>
+        // Dicionário de Traduções
+        const translations = {
+            pt: {
+                nav_home: "/HOME",
+                nav_about: "/PERFIL",
+                nav_xp: "/MISSÕES",
+                nav_contact: "/CONTATO",
+                hero_hello: "> Olá, Mundo. Eu sou",
+                hero_roles: "[ BACKEND DEV | QA LEAD | SUPORTE N3 ]",
+                hero_desc: "Especialista em unir desenvolvimento robusto (PHP/Laravel) com a excelência em qualidade (QA) e análise crítica de suporte.",
+                btn_connect: "INICIAR_CONEXÃO",
+                about_title: "01. ARQUIVO_PESSOAL & STACK",
+                loading_bio: "> Carregando bio...",
+                status: "Disponível",
+                bio_p1: "Profissional de TI com <strong>8+ anos de experiência</strong>, atuando na intersecção entre Desenvolvimento, Sustentação e Qualidade.",
+                bio_p2: "Minha expertise vai além do código: possuo forte background em análise de incidentes críticos (N3), gestão de SLA e processos de QA. Isso me permite não apenas criar software, mas garantir que ele seja mantido, testado e suportado com excelência.",
+                focus: "> Foco: Laravel, Docker, C#, QA Automation.",
+                tech_skills: "// COMPETÊNCIAS TÉCNICAS",
+                cat_backend: "BACKEND & LINGUAGENS",
+                skill_csharp: "C# (Backend / Aplicações)",
+                cat_qa: "QA, SUPORTE & FERRAMENTAS",
+                skill_tests: "Testes (PHPUnit / Postman)",
+                skill_incidents: "Gestão de Incidentes (Jira / Zendesk)",
+                xp_title: "02. LOGS_DE_MISSÃO (EXPERIÊNCIA)",
+                date_current: "2023-2025",
+                role_om30: "> Líder de Suporte e QA & Analista de Sistemas",
+                om30_1: "Liderança técnica da equipe de suporte, realizando triagem avançada e distribuição de incidentes (N1, N2 e N3).",
+                om30_2: "Atuação direta na <strong>Garantia de Qualidade (QA)</strong>, validando correções e prevenindo regressão de bugs antes do deploy.",
+                om30_3: "Gestão de SLAs críticos e comunicação técnica com clientes da área pública (Saúde/Educação).",
+                om30_4: "Ponte técnica entre a equipe de Suporte e Desenvolvimento, traduzindo falhas operacionais em requisitos técnicos.",
+                om30_5: "Uso de ferramentas como Jira e Zendesk para rastreabilidade de chamados.",
+                role_pardini: "> Desenvolvedor PHP & Analista de Sustentação",
+                pardini_1: "Desenvolvimento backend robusto utilizando <strong>Laravel, Docker e MySQL</strong>.",
+                pardini_2: "Sustentação de sistemas laboratoriais de missão crítica com foco em Alta Disponibilidade.",
+                pardini_3: "Criação e manutenção de APIs RESTful e integração de microsserviços.",
+                pardini_4: "Implementação de testes automatizados e boas práticas de segurança (JWT, CSRF).",
+                pardini_5: "Diagnóstico de bugs complexos e refatoração de código legado para melhoria de performance.",
+                role_petronet: "> Suporte Técnico & Web Dev",
+                petronet_1: "Suporte à infraestrutura Windows e Linux, garantindo a operação dos serviços de rede.",
+                petronet_2: "Desenvolvimento e customização de sites em WordPress e PHP.",
+                petronet_3: "Diagnóstico de problemas em integrações de API e análise de logs de servidor.",
+                petronet_4: "Documentação técnica de procedimentos para base de conhecimento.",
+                contact_title: "03. ESTABELECER_CONEXÃO",
+                contact_p1: "> Protocolo de contato iniciado...",
+                contact_status: "Aberto a propostas de Dev e Liderança"
+            },
+            en: {
+                nav_home: "/HOME",
+                nav_about: "/PROFILE",
+                nav_xp: "/MISSIONS",
+                nav_contact: "/CONTACT",
+                hero_hello: "> Hello, World. I am",
+                hero_roles: "[ BACKEND DEV | QA LEAD | N3 SUPPORT ]",
+                hero_desc: "Specialist in bridging robust backend development (PHP/Laravel) with QA excellence and critical support analysis.",
+                btn_connect: "START_CONNECTION",
+                about_title: "01. PERSONAL_FILE & STACK",
+                loading_bio: "> Loading bio...",
+                status: "Available",
+                bio_p1: "IT Professional with <strong>8+ years of experience</strong>, working at the intersection of Development, Support, and Quality Assurance.",
+                bio_p2: "My expertise goes beyond code: I have a strong background in critical incident analysis (N3), SLA management, and QA processes. This allows me not only to build software but to ensure it is maintained, tested, and supported with excellence.",
+                focus: "> Focus: Laravel, Docker, C#, QA Automation.",
+                tech_skills: "// TECHNICAL SKILLS",
+                cat_backend: "BACKEND & LANGUAGES",
+                skill_csharp: "C# (Backend / Apps)",
+                cat_qa: "QA, SUPPORT & TOOLS",
+                skill_tests: "Testing (PHPUnit / Postman)",
+                skill_incidents: "Incident Management (Jira / Zendesk)",
+                xp_title: "02. MISSION_LOGS (EXPERIENCE)",
+                date_current: "2023-2025",
+                role_om30: "> Support & QA Lead / Systems Analyst",
+                om30_1: "Technical leadership of the support team, performing advanced triage and distribution of incidents (N1, N2, and N3).",
+                om30_2: "Direct role in <strong>Quality Assurance (QA)</strong>, validating fixes and preventing bug regression before deployment.",
+                om30_3: "Management of critical SLAs and technical communication with public sector clients (Health/Education).",
+                om30_4: "Technical bridge between Support and Development teams, translating operational failures into technical requirements.",
+                om30_5: "Usage of tools like Jira and Zendesk for ticket traceability.",
+                role_pardini: "> PHP Developer & Support Analyst",
+                pardini_1: "Robust backend development using <strong>Laravel, Docker, and MySQL</strong>.",
+                pardini_2: "Maintenance of mission-critical laboratory systems focused on High Availability.",
+                pardini_3: "Creation and maintenance of RESTful APIs and microservices integration.",
+                pardini_4: "Implementation of automated tests and security best practices (JWT, CSRF).",
+                pardini_5: "Diagnosis of complex bugs and refactoring of legacy code for performance improvement.",
+                role_petronet: "> Tech Support & Web Dev",
+                petronet_1: "Support for Windows and Linux infrastructure, ensuring network service operations.",
+                petronet_2: "Development and customization of WordPress and PHP sites.",
+                petronet_3: "Diagnosis of API integration issues and server log analysis.",
+                petronet_4: "Technical documentation of procedures for the knowledge base.",
+                contact_title: "03. ESTABLISH_CONNECTION",
+                contact_p1: "> Contact protocol initiated...",
+                contact_status: "Open to Dev and Leadership proposals"
+            }
+        };
+
+        let currentLang = 'pt';
+
+        function toggleLanguage() {
+            // Alternar idioma
+            currentLang = currentLang === 'pt' ? 'en' : 'pt';
+            
+            // Selecionar todos os elementos com atributo data-translate
+            const elements = document.querySelectorAll('[data-translate]');
+            
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[currentLang][key]) {
+                    // Se houver tags HTML dentro da string (ex: <strong>), use innerHTML
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
 </body>
 </html>
